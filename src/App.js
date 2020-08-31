@@ -82,7 +82,7 @@ class App extends Component {
         <Survey 
           clicked={() => this.optionHandler({Survey})} 
           q={this.state.questions[2].q}></Survey>
-        <StyledButton onClick={this.toggleQuestions}>Add questions</StyledButton>
+        <button className='button' onClick={this.toggleQuestions}>Add questions</button>
       </div>
       </StyleRoot>
       
