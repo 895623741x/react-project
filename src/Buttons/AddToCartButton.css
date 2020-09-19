@@ -1,0 +1,12 @@
+.addToCartButton {
+    margin: 10px 20px 0 0;
+}
+.button_content {
+    border: none;
+    background-color: greenyellow;
+    cursor: pointer;
+}
+
+.button_text {
+    font-size: 10px;
+}

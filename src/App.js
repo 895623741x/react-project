@@ -1,95 +1,33 @@
-import React, {Component} from 'react';
-import Radium, {StyleRoot} from 'radium';
-import styled from 'styled-components';
-import './App.css';
-import Survey from './Component/Survey';
+import React from 'react'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import Header from './Header';
+import Home from './Home';
 
-const StyledButton = styled.button`
-  color: white;
-  background-color: green;
-  &:hover {
-    background-color: lightgreen;
-  }
-`;
-
-
-
-class App extends Component {
-  state = {
-    questions: [
-      {id:'1', q: 'the time you usually go to bed'},
-      {id:'2', q: 'your travel frequency'},
-      {id:'3', q: 'how many times have you traveled'}
-    ],
-    options: [
-      {op: '1-2'},
-      {op: '3-4'},
-      {op: '4-5'}
-    ],
-    addMoreQuestions: false
-  }
-
-  
-
-  toggleQuestions = () => {
-    const addQuestions = this.state.addMoreQuestions;
-    this.setState( {addMoreQuestions: !addQuestions} );
-  }
-
-  optionHandler = (item) => {
-    const options = this.state.options;
-    options.push({item});
-    this.setState();
-  }
-
-  addQuestionHandler = (index) => {
-    const questions = [...this.state.questions];
-    questions.push(() => {
-      return <Survey></Survey>
-    });
-    this.setState({questions: questions});
-  }
-
-  render() {
-    
-
-    
-    let questions = null;
-
-    if ( this.state.addMoreQuestions ) {
-      questions = (
-        <div>
-          {this.state.questions.map((index) => {
-            return <Survey 
-              click={() => this.addQuestionHandler(index)} />
-             
-          })}
-        </div>
-      );
-    }
-
-    return (
-      <StyleRoot>
-        <div>
-        <Survey 
-          clicked={() => this.optionHandler({Survey})}
-          q={this.state.questions[0].q}
-          op={this.state.options[0].op}></Survey>
-          
-        <Survey 
-          clicked={() => this.optionHandler({Survey})} 
-          q={this.state.questions[1].q}></Survey>
-        <Survey 
-          clicked={() => this.optionHandler({Survey})} 
-          q={this.state.questions[2].q}></Survey>
-        <button className='button' onClick={this.toggleQuestions}>Add questions</button>
+function App() {
+  return (
+    <Router>
+      <div className='app'>
+        <Switch>
+          <Route exact path='/'>
+            <Home></Home>
+          </Route>
+          <Route path='/login'>
+            <div>this is the login page</div>
+          </Route>
+          <Route path='/checkout'>
+            <div>this is the checkout page</div>
+          </Route>
+        </Switch>
       </div>
-      </StyleRoot>
-      
-      
-    )
-  }
-
+    </Router>
+    
+  )
 }
 
-export default Radium(App);
+export default App
+
