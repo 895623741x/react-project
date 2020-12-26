@@ -1,9 +1,18 @@
 import React from 'react';
 import './NewProductOverview.css';
 import scientificImage from '../assets/scientific_image.jpg';
+import FlavorFact from './FlavorFact'
+import birthdayImage from '../assets/NutritionFact/birthdaycake.png'
+import chocolateImage from '../assets/NutritionFact/chocolatebliss.png'
+import caramelImage from '../assets/NutritionFact/caramelicecream.jpg'
+import mintImage from '../assets/NutritionFact/mintbrownie.jpg'
+import vanillaImage from '../assets/NutritionFact/richvanilla.png'
+import strawberryImage from '../assets/NutritionFact/strawberrycream.png'
+
 
 
 const NewProductOverview = (props) => {
+    
     if(props.clicked === 0) {
         return (
             <div className='overview'>
@@ -25,7 +34,12 @@ const NewProductOverview = (props) => {
         )
     } else if(props.clicked !== 0){
         return (
-            <div>good</div>
+            <div className='overview'>
+                
+                <div>
+                    <img src={birthdayImage} alt=''></img>
+                </div>
+            </div>
         )
     }
     

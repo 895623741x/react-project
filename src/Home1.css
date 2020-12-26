@@ -1,0 +1,38 @@
+.Card {
+	height: 200px;
+}
+
+.home-div {
+	display: grid;
+}
+
+.carousel {
+	margin-top: 100px;
+	background-color: black;
+	width: 100%;
+	height: 300px;
+}
+
+.Media {
+	display: column;
+}
+
+.slide0,
+.slide1 {
+	width: 80%;
+	height: 300px;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+.recommendation {
+	margin: 10% 40% 10% 40%;
+}
+
+.homepageProducts {
+	cursor: pointer;
+	display: grid;
+	grid-template-columns: repeat(4, auto);
+	grid-gap: 5px;
+	grid-auto-flow: flex;
+}

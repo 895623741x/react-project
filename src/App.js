@@ -1,33 +1,30 @@
-import React from 'react'
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
-import Header from './Header';
-import Home from './Home';
+import React from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Header1 from "./Header1";
+import Home from "./Home";
+import Home1 from "./Home1";
+import Protein from "./Protein";
+import Cart from "./Cart/Cart";
+import { RecoilRoot } from "recoil";
+import Snack from "./Snack";
+import Accessories from "./Accessories";
 
 function App() {
-  return (
-    <Router>
-      <div className='app'>
-        <Switch>
-          <Route exact path='/'>
-            <Home></Home>
-          </Route>
-          <Route path='/login'>
-            <div>this is the login page</div>
-          </Route>
-          <Route path='/checkout'>
-            <div>this is the checkout page</div>
-          </Route>
-        </Switch>
-      </div>
-    </Router>
-    
-  )
+	return (
+		<Router>
+			<div className="app">
+				<Switch>
+					<Route exact path="/">
+						<Home1></Home1>
+					</Route>
+					<Route path="/protein" component={Protein}></Route>
+					<Route path="/Cart" component={Cart}></Route>
+					<Route path="/snack" component={Snack}></Route>
+					<Route path="/accessories" component={Accessories}></Route>
+				</Switch>
+			</div>
+		</Router>
+	);
 }
 
-export default App
-
+export default App;
