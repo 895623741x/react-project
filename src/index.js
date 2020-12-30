@@ -4,10 +4,14 @@ import "./index.css";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
+import { StateProvider } from "./StateProvider";
+import Reducer, { initialState } from "./Reducer";
 
 ReactDOM.render(
 	<BrowserRouter>
-		<App />
+		<StateProvider initialState={initialState} reducer={Reducer}>
+			<App />
+		</StateProvider>
 	</BrowserRouter>,
 	document.getElementById("root")
 );

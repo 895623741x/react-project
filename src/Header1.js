@@ -6,8 +6,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
-
+import { useStateValue } from "./StateProvider";
 function Header1() {
+	const [{ basket }] = useStateValue();
 	return (
 		<div>
 			<Navbar bg="dark" variant="dark" fixed="top" className="navbar">
@@ -20,13 +21,14 @@ function Header1() {
 						</Navbar.Brand>
 						<Nav>
 							<Nav.Link>
-								<Link to="/account">
+								<Link to="/login">
 									<AccountCircleIcon />
 								</Link>
 							</Nav.Link>
 							<Nav.Link>
 								<Link to="/cart">
-									<ShoppingCartIcon />
+									<ShoppingCartIcon></ShoppingCartIcon>
+									<span>({basket?.length})</span>
 								</Link>
 							</Nav.Link>
 						</Nav>

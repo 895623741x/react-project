@@ -1,0 +1,21 @@
+.checkoutProduct {
+	display: flex;
+}
+.checkoutProduct-image {
+	-o-object-fit: contain;
+	object-fit: contain;
+	width: 180px;
+	height: 180px;
+}
+
+.checkoutProduct-info {
+	margin-left: 20px;
+}
+
+.checkoutProduct-info-itemAmount {
+	display: flex;
+}
+
+.info-input {
+	width: 30px;
+}
