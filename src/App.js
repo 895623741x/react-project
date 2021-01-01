@@ -1,7 +1,7 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link, withRouter } from "react-router-dom";
 import Home1 from "./Home1";
-import Protein from "./Protein";
+import Protein from "./ProteinPage/Protein";
 import Cart from "./Cart/Cart";
 import Snack from "./Snack";
 import Accessories from "./Accessories";
@@ -26,4 +26,4 @@ function App() {
 	);
 }
 
-export default App;
+export default withRouter(App);

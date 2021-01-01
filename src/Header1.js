@@ -44,12 +44,12 @@ function Header1() {
 							<Nav.Link>
 								<Link to="/protein">PROTEIN</Link>
 							</Nav.Link>
-							<Nav.Link>
+							{/* <Nav.Link>
 								<Link to="/snack">SNACK & DRINKS</Link>
 							</Nav.Link>
 							<Nav.Link>
 								<Link to="/accessories">ACCESSORIES</Link>
-							</Nav.Link>
+							</Nav.Link> */}
 						</Nav>
 					</div>
 				</Nav>
