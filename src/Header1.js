@@ -14,25 +14,26 @@ function Header1() {
 			<Navbar bg="dark" variant="dark" fixed="top" className="navbar">
 				<Nav className="flex-column">
 					<div className="nav-div1">
-						<Navbar.Brand>
+						<Navbar.Brand className="navBrand">
 							<Link to="/">
-								<h1>IRONPROTEIN</h1>
+								<h2>IRONPROTEIN</h2>
 							</Link>
 						</Navbar.Brand>
 						<Nav>
-							<Nav.Link>
+							<Nav.Link className="navItem">
 								<Link to="/login">
-									<AccountCircleIcon />
+									<AccountCircleIcon fontSize="large" />
+									<span className="accountIcon-span">Account</span>
 								</Link>
 							</Nav.Link>
-							<Nav.Link>
+							<Nav.Link className="navItem">
 								<Link to="/cart">
-									<ShoppingCartIcon></ShoppingCartIcon>
+									<ShoppingCartIcon fontSize="large" />
 									<span>({basket?.length})</span>
 								</Link>
 							</Nav.Link>
 						</Nav>
-						<Form inline>
+						<Form inline className="form">
 							<FormControl type="text" placeholder="Search" />
 							<Button variant="outline-info">
 								<SearchIcon />
