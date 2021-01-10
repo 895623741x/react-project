@@ -1,25 +1,6 @@
 import image1 from "./assets/goldcasein1.png";
 export const initialState = {
-	basket: [
-		{
-			id: 1,
-			name: "good",
-			image: { image1 },
-			price: 200,
-			description: "good",
-			number: 2,
-			isClicked: true,
-		},
-		{
-			id: 11,
-			name: "kkk",
-			image: { image1 },
-			price: 400,
-			description: "kkkk",
-			number: 3,
-			isClicked: true,
-		},
-	],
+	basket: [],
 	user: null,
 };
 
@@ -29,9 +10,10 @@ const Reducer = (state, action) => {
 	switch (action.type) {
 		case "ADD_TO_BASKET":
 			//logic for adding items to basket
-			let newBasket1 = [...state.basket];
-			const index1 = state.basket.findIndex((basketItem1) => basketItem1.id === action.id);
-			if (index1 >= 0) {
+			const newBasket1 = [...state.basket];
+			const index1 = state.basket.findIndex((basketItem1) => basketItem1.id === action.item.id);
+
+			if (index1 >= 0 && state.basket[index1].number >= 1) {
 				newBasket1[index1].number += 1;
 				return { ...state, basket: newBasket1 };
 			} else {
@@ -40,6 +22,16 @@ const Reducer = (state, action) => {
 					basket: [...state.basket, action.item],
 				};
 			}
+
+		case "INCREASE_TO_BASKET":
+			let newBasket3 = [...state.basket];
+			const index3 = state.basket.findIndex((basketItem) => basketItem.id === action.id);
+			if (index3 >= 0 && state.basket[index3].number >= 1) {
+				newBasket3[index3].number += 1;
+			} else if (index3 >= 0 && state.basket[index3].number === 1) {
+				newBasket2.splice(index3, 1);
+			}
+			return { ...state, basket: newBasket3 };
 
 		// oritinal code
 		// return {
@@ -64,6 +56,16 @@ const Reducer = (state, action) => {
 				console.warn(`item ${index} is not in the cart`);
 			}
 			return { ...state, basket: newBasket };
+
+		case "DECREASE_FROM_BASKET":
+			let newBasket2 = [...state.basket];
+			const index2 = state.basket.findIndex((basketItem) => basketItem.id === action.id);
+			if (index2 >= 0 && state.basket[index2].number > 1) {
+				newBasket2[index2].number -= 1;
+			} else if (index2 >= 0 && state.basket[index2].number === 1) {
+				newBasket2.splice(index2, 1);
+			}
+			return { ...state, basket: newBasket2 };
 
 		default:
 			return state;

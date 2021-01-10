@@ -13,7 +13,14 @@ function CheckoutProduct({ id, name, image, price, description, number }) {
 	};
 	const increaseItemNum = () => {
 		dispatch({
-			type: "ADD_TO_BASKET",
+			type: "INCREASE_TO_BASKET",
+			id: id,
+		});
+	};
+
+	const decreaseItemNum = () => {
+		dispatch({
+			type: "DECREASE_FROM_BASKET",
 			id: id,
 		});
 	};
@@ -29,7 +36,7 @@ function CheckoutProduct({ id, name, image, price, description, number }) {
 				<div className="checkoutProduct-info-itemAmount">
 					<Button onClick={increaseItemNum}>+</Button>
 					<input className="info-input" value={number}></input>
-					<Button>-</Button>
+					<Button onClick={decreaseItemNum}>-</Button>
 				</div>
 			</div>
 		</div>

@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Carousel, Media, Card, CardGroup, Button } from "react-bootstrap";
 import { useStateValue } from "./StateProvider";
 import image1 from "./assets/athle.jpg";
 
 const Product = ({ id, name, image, price, description, number, popularity }) => {
 	const [{ basket }, dispatch] = useStateValue();
+	// const [click, updateClick] = useState(false);
+	// const clicked = click;
 	const addToCart = () => {
+		// updateClick(true);
 		dispatch({
 			type: "ADD_TO_BASKET",
 			item: {

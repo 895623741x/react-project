@@ -6,6 +6,7 @@ export const collagen = {
 	description: "Supports Healty Skin, Hair, &Joints",
 	number: 1,
 	popularity: 3,
+	type: "protein_powder",
 };
 export const goldCasein = {
 	id: 2,
@@ -15,6 +16,7 @@ export const goldCasein = {
 	description: "Slow-Digesting Protein for Overnight Muscle Recovery",
 	number: 1,
 	popularity: 2,
+	type: "protein_powder",
 };
 export const goldPlant = {
 	id: 3,
@@ -24,6 +26,7 @@ export const goldPlant = {
 	description: "Organic, Plant-Based Protein",
 	number: 1,
 	popularity: 2,
+	type: "protein_powder",
 };
 export const goldProteinDrink = {
 	id: 4,
@@ -33,6 +36,7 @@ export const goldProteinDrink = {
 	description: "Muscle Recovery On the Go",
 	number: 1,
 	popularity: 2,
+	type: "protein_powder",
 };
 export const goldStandard = {
 	id: 5,
@@ -42,6 +46,7 @@ export const goldStandard = {
 	description: "Post-Workout Muscle Support & Recovery",
 	number: 1,
 	popularity: 2,
+	type: "protein_powder",
 };
 export const hydrowhey = {
 	id: 6,
@@ -51,6 +56,7 @@ export const hydrowhey = {
 	description: "Hydrolyzed, Quick Digesting",
 	number: 1,
 	popularity: 2,
+	type: "protein_powder",
 };
 export const naturalGold = {
 	id: 7,
@@ -60,6 +66,7 @@ export const naturalGold = {
 	description: "No Artificial Flavors, Sweeteners or Colors",
 	number: 1,
 	popularity: 2,
+	type: "protein_powder",
 };
 export const performance = {
 	id: 8,
@@ -69,6 +76,7 @@ export const performance = {
 	description: "Concentrated Protein Complex",
 	number: 1,
 	popularity: 2,
+	type: "protein_powder",
 };
 export const products = [
 	collagen,
