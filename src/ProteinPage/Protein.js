@@ -14,6 +14,7 @@ import {
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Protein.css";
 import Header1 from "../Header1";
+import Product from "../Product";
 import { rankedProtein } from "../data";
 
 const initialState = rankedProtein;
@@ -70,21 +71,30 @@ function Protein() {
 
 				<div className="products-div">
 					{data.map((p, i) => (
-						<Card>
-							<Card.Img variant="top" src={p.image} />
-							<Card.Body>
-								<Card.Title>{p.proName}</Card.Title>
-								<Card.Text>{p.description}</Card.Text>
-							</Card.Body>
-							<Card.Body>
-								<h5>${p.price}</h5>
-								<br />
-								<h5>Popularity: {p.popularity}</h5>
-								<br />
-							</Card.Body>
+						<Product
+							id={p.id}
+							name={p.name}
+							image={p.image}
+							price={p.price}
+							description={p.description}
+							number={p.number}
+							popularity={p.popularity}
+						/>
+						// <Card>
+						// 	<Card.Img variant="top" src={p.image} />
+						// 	<Card.Body>
+						// 		<Card.Title>{p.proName}</Card.Title>
+						// 		<Card.Text>{p.description}</Card.Text>
+						// 	</Card.Body>
+						// 	<Card.Body>
+						// 		<h5>${p.price}</h5>
+						// 		<br />
+						// 		<h5>Popularity: {p.popularity}</h5>
+						// 		<br />
+						// 	</Card.Body>
 
-							<Button>Add to Cart</Button>
-						</Card>
+						// 	<Button>Add to Cart</Button>
+						// </Card>
 					))}
 				</div>
 			</div>
