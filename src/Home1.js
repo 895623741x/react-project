@@ -29,10 +29,30 @@ function Home1() {
 		<div className="home-div">
 			<Header1></Header1>
 			<Carousel className="carousel">{slideCards()}</Carousel>
-			<h1 className="recommendation">BEST SELLERS</h1>
 
+			<h1 className="recommendation1">--- BEST SELLERS ---</h1>
 			<div className="bestSeller-div">
-				<Products></Products>
+				<Products isBestSeller="true" isSnack="false" isShaker="false"></Products>
+				<Link>
+					<Button variant="dark" className="viewAllButton">
+						View All
+					</Button>
+				</Link>
+			</div>
+
+			<h1 className="recommendation2">Snack</h1>
+			<div className="bestSeller-div">
+				<Products isBestSeller="false" isSnack="true" isShaker="false"></Products>
+				<Link>
+					<Button variant="dark" className="viewAllButton">
+						View All
+					</Button>
+				</Link>
+			</div>
+
+			<h1 className="recommendation2">Shaker</h1>
+			<div className="bestSeller-div">
+				<Products isBestSeller="false" isSnack="false" isShaker="true"></Products>
 				<Link>
 					<Button variant="dark" className="viewAllButton">
 						View All

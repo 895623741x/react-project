@@ -4,6 +4,7 @@
 
 .home-div {
 	display: grid;
+	background-color: black;
 }
 
 .bestSeller-div {
@@ -66,8 +67,10 @@
 	margin-right: 10%;
 }
 
-.recommendation {
-	margin: 10% 40% 10% 40%;
+.recommendation1,
+.recommendation2 {
+	color: white;
+	margin: 5% 30% 5% 30%;
 }
 
 .homepageProducts {

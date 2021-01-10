@@ -19,20 +19,28 @@ function Header1() {
 								<h2>IRONPROTEIN</h2>
 							</Link>
 						</Navbar.Brand>
-						<Nav>
-							<Nav.Link className="navItem">
-								<Link to="/login">
-									<AccountCircleIcon fontSize="large" />
-									<span className="accountIcon-span">Account</span>
-								</Link>
-							</Nav.Link>
-							<Nav.Link className="navItem">
-								<Link to="/cart">
-									<ShoppingCartIcon fontSize="large" />
-									<span>({basket?.length})</span>
-								</Link>
-							</Nav.Link>
-						</Nav>
+						<Nav.Link>
+							<Link to="/protein">PROTEIN</Link>
+						</Nav.Link>
+						<Nav.Link>
+							<Link to="/snack">SNACK & DRINKS</Link>
+						</Nav.Link>
+						<Nav.Link>
+							<Link to="/protein">SHAKER</Link>
+						</Nav.Link>
+						<Nav.Link className="navItem">
+							<Link to="/login">
+								<AccountCircleIcon fontSize="large" />
+								<span className="accountIcon-span">Account</span>
+							</Link>
+						</Nav.Link>
+						<Nav.Link className="navItem">
+							<Link to="/cart">
+								<ShoppingCartIcon fontSize="large" />
+								<span>({basket?.length})</span>
+							</Link>
+						</Nav.Link>
+
 						<Form inline className="form">
 							<FormControl type="text" placeholder="Search" />
 							<Button variant="outline-info">
@@ -41,17 +49,9 @@ function Header1() {
 						</Form>
 					</div>
 					<div className="nav-div2">
-						<Nav className="nav">
-							<Nav.Link>
-								<Link to="/protein">PROTEIN</Link>
-							</Nav.Link>
-							<Nav.Link>
-								<Link to="/snack">SNACK & DRINKS</Link>
-							</Nav.Link>
-							{/* <Nav.Link>
+						<Nav className="nav">{/* <Nav.Link>
 								<Link to="/accessories">ACCESSORIES</Link>
-							</Nav.Link> */}
-						</Nav>
+							</Nav.Link> */}</Nav>
 					</div>
 				</Nav>
 			</Navbar>

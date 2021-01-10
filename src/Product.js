@@ -32,7 +32,8 @@ const Product = ({ id, name, image, price, description, number, popularity }) =>
 					<b>${price}</b>
 				</Card.Text>
 			</Card.Body>
-			<p>{popularity}</p>
+
+			<b>Popularity: {popularity}</b>
 			<Button onClick={addToCart}>ADD TO CART</Button>
 		</Card>
 	);
