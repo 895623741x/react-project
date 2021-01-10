@@ -26,7 +26,7 @@ function Header1() {
 							<Link to="/snack">SNACK & DRINKS</Link>
 						</Nav.Link>
 						<Nav.Link>
-							<Link to="/protein">SHAKER</Link>
+							<Link to="/shaker">SHAKER</Link>
 						</Nav.Link>
 						<Nav.Link className="navItem">
 							<Link to="/login">

@@ -12,13 +12,13 @@ import {
 	CardGroup,
 } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./Protein.css";
+import "./Snack.css";
 import Header1 from "../Header1";
-import { rankedProtein } from "../data";
+import { rankedSnacks } from "../data";
 
-const initialState = rankedProtein;
+const initialState = rankedSnacks;
 
-function Protein() {
+function Snack() {
 	const [data, updateData] = useState(initialState);
 
 	const lowHigh = (a, b) => {
@@ -28,23 +28,6 @@ function Protein() {
 		return b.price - a.price;
 	};
 
-	// const sortFunction = () => {
-	// 	let listItems = [];
-	// 	for (let i = 0; i < data.length; i++) {
-	// 		listItems[i] = (
-	// 			<Card>
-	// 				<Card.Img variant="top" src={data[i].image} />
-	// 				<Card.Body>
-	// 					<Card.Title>{data[i].proName}</Card.Title>
-	// 					<Card.Text>{data[i].description}</Card.Text>
-	// 					<Card.Text>{data[i].price}</Card.Text>
-	// 				</Card.Body>
-	// 				<Button>Add to Cart</Button>
-	// 			</Card>
-	// 		);
-	// 	}
-	// 	return listItems;
-	// };
 	return (
 		<div className="main-div">
 			<Header1></Header1>
@@ -92,4 +75,4 @@ function Protein() {
 	);
 }
 
-export default Protein;
+export default Snack;

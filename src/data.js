@@ -6,7 +6,7 @@ export const collagen = {
 	description: "Supports Healty Skin, Hair, &Joints",
 	number: 1,
 	popularity: 20,
-	type: "protein_powder",
+	type: "protein",
 };
 export const goldCasein = {
 	id: 2,
@@ -16,7 +16,7 @@ export const goldCasein = {
 	description: "Slow-Digesting Protein for Overnight Muscle Recovery",
 	number: 1,
 	popularity: 85,
-	type: "protein_powder",
+	type: "protein",
 };
 export const goldPlant = {
 	id: 3,
@@ -26,7 +26,7 @@ export const goldPlant = {
 	description: "Organic, Plant-Based Protein",
 	number: 1,
 	popularity: 77,
-	type: "protein_powder",
+	type: "protein",
 };
 export const goldProteinDrink = {
 	id: 4,
@@ -36,7 +36,7 @@ export const goldProteinDrink = {
 	description: "Muscle Recovery On the Go",
 	number: 1,
 	popularity: 65,
-	type: "drink",
+	type: "snack",
 };
 export const goldStandard = {
 	id: 5,
@@ -46,7 +46,7 @@ export const goldStandard = {
 	description: "Post-Workout Muscle Support & Recovery",
 	number: 1,
 	popularity: 22,
-	type: "protein_powder",
+	type: "protein",
 };
 export const hydrowhey = {
 	id: 6,
@@ -56,7 +56,7 @@ export const hydrowhey = {
 	description: "Hydrolyzed, Quick Digesting",
 	number: 1,
 	popularity: 52,
-	type: "protein_powder",
+	type: "protein",
 };
 export const naturalGold = {
 	id: 7,
@@ -66,7 +66,7 @@ export const naturalGold = {
 	description: "No Artificial Flavors, Sweeteners or Colors",
 	number: 1,
 	popularity: 42,
-	type: "protein_powder",
+	type: "protein",
 };
 export const performance = {
 	id: 8,
@@ -76,7 +76,7 @@ export const performance = {
 	description: "Concentrated Protein Complex",
 	number: 1,
 	popularity: 32,
-	type: "protein_powder",
+	type: "protein",
 };
 
 export const impactWhey = {
@@ -87,7 +87,7 @@ export const impactWhey = {
 	description: "Our #1 protein powder for your everyday nutrition!",
 	number: 1,
 	popularity: 10,
-	type: "protein_powder",
+	type: "protein",
 };
 
 export const theWhey = {
@@ -98,7 +98,7 @@ export const theWhey = {
 	description: "Scientifically proven protein to help you achieve your goals",
 	number: 1,
 	popularity: 25,
-	type: "protein_powder",
+	type: "protein",
 };
 
 export const veteranIsolate = {
@@ -109,7 +109,7 @@ export const veteranIsolate = {
 	description: "HAPPY VETERANS DAY!",
 	number: 1,
 	popularity: 20,
-	type: "protein_powder",
+	type: "protein",
 };
 
 export const weightGainer = {
@@ -120,7 +120,7 @@ export const weightGainer = {
 	description: "The perfect way to increase strength and size",
 	number: 1,
 	popularity: 35,
-	type: "protein_powder",
+	type: "protein",
 };
 
 // snack
@@ -269,18 +269,44 @@ export const products = [
 	shakeSphere,
 ];
 
-//best sellers
+const popularityHighLow = (arr) => {
+	arr.sort((a, b) => {
+		return b.popularity - a.popularity;
+	});
+	return arr;
+};
 
-let bestProducts = products.filter((a) => a.popularity >= 25);
-let bestProductsHighLow = bestProducts.sort((x, y) => {
-	return y.popularity - x.popularity;
-});
-export const bestSellersArray = bestProductsHighLow.splice(9, bestProductsHighLow.length - 8);
+//best seller
+
+let bestProducts = products.filter((a) => a.popularity >= 20);
+let bestProductsHighLow = popularityHighLow(bestProducts);
+let emptyArr1 = [];
+for (let i = 0; i < 8; i++) {
+	emptyArr1[i] = bestProductsHighLow[i];
+}
+export const bestSellersArray = emptyArr1;
 
 // Snacks
-
-export const snacks = products.filter((a) => a.type === "snack");
-
+let snacks = products.filter((a) => a.type === "snack");
+export const rankedSnacks = popularityHighLow(snacks);
 // Shakers
+let shakers = products.filter((a) => a.type === "shaker");
+export const rankedShakers = popularityHighLow(shakers);
+// Protein
+let protein = products.filter((a) => a.type === "protein");
+export const rankedProtein = popularityHighLow(protein);
 
-export const shakers = products.filter((a) => a.type === "shaker");
+let emptyArr2 = [];
+let emptyArr3 = [];
+let emptyArr4 = [];
+for (let i = 0; i < 4; i++) {
+	emptyArr2[i] = rankedSnacks[i];
+	emptyArr3[i] = rankedShakers[i];
+	emptyArr4[i] = rankedProtein[i];
+}
+
+export const bestSnacks = emptyArr2;
+
+export const bestShakers = emptyArr3;
+
+export const bestProtein = emptyArr4;

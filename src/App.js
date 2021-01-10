@@ -3,8 +3,9 @@ import { BrowserRouter as Router, Switch, Route, Link, withRouter } from "react-
 import Home1 from "./Home1";
 import Protein from "./ProteinPage/Protein";
 import Cart from "./Cart/Cart";
-import Snack from "./Snack";
-import Accessories from "./Accessories";
+import Snack from "./SnackPage/Snack";
+
+import Shaker from "./ShakerPage/Shaker";
 import Login from "./Login";
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
 					<Route path="/protein" component={Protein}></Route>
 					<Route path="/cart" component={Cart}></Route>
 					<Route path="/snack" component={Snack}></Route>
-					<Route path="/accessories" component={Accessories}></Route>
+					<Route path="/shaker" component={Shaker}></Route>
 					<Route path="/login" component={Login}></Route>
 				</Switch>
 			</div>

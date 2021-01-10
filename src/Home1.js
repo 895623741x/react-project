@@ -32,7 +32,17 @@ function Home1() {
 
 			<h1 className="recommendation1">--- BEST SELLERS ---</h1>
 			<div className="bestSeller-div">
-				<Products isBestSeller="true" isSnack="false" isShaker="false"></Products>
+				<Products isBestSeller="true" isSnack="false" isShaker="false" isProtein="false"></Products>
+				<Link>
+					<Button variant="dark" className="viewAllButton">
+						View All
+					</Button>
+				</Link>
+			</div>
+
+			<h1 className="recommendation1">--- Protein ---</h1>
+			<div className="bestSeller-div">
+				<Products isBestSeller="false" isSnack="false" isShaker="false" isProtein="true"></Products>
 				<Link>
 					<Button variant="dark" className="viewAllButton">
 						View All
@@ -42,7 +52,7 @@ function Home1() {
 
 			<h1 className="recommendation2">Snack</h1>
 			<div className="bestSeller-div">
-				<Products isBestSeller="false" isSnack="true" isShaker="false"></Products>
+				<Products isBestSeller="false" isSnack="true" isShaker="false" isProtein="false"></Products>
 				<Link>
 					<Button variant="dark" className="viewAllButton">
 						View All
@@ -52,7 +62,7 @@ function Home1() {
 
 			<h1 className="recommendation2">Shaker</h1>
 			<div className="bestSeller-div">
-				<Products isBestSeller="false" isSnack="false" isShaker="true"></Products>
+				<Products isBestSeller="false" isSnack="false" isShaker="true" isProtein="false"></Products>
 				<Link>
 					<Button variant="dark" className="viewAllButton">
 						View All

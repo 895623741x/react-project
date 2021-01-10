@@ -3,22 +3,40 @@ import { Carousel, Media, Card, CardGroup, Button } from "react-bootstrap";
 import { useStateValue } from "./StateProvider";
 import "./Products.css";
 import Product from "./Product";
-import { products, bestSellersArray, snacks, shakers } from "./data";
+import { products, bestSellersArray, bestSnacks, bestShakers, bestProtein } from "./data";
 
 ////
 
+function allProtein() {
+	let proteinArray = [];
+	for (let i = 0; i < bestProtein.length; i++) {
+		proteinArray[i] = (
+			<Product
+				id={bestProtein[i].id}
+				name={bestProtein[i].proName}
+				image={bestProtein[i].image}
+				price={bestProtein[i].price}
+				description={bestProtein[i].description}
+				number={bestProtein[i].number}
+				popularity={bestProtein[i].popularity}
+			></Product>
+		);
+	}
+	return proteinArray;
+}
+
 function allShakers() {
 	let shakersArray = [];
-	for (let i = 0; i < shakers.length; i++) {
+	for (let i = 0; i < bestShakers.length; i++) {
 		shakersArray[i] = (
 			<Product
-				id={shakers[i].id}
-				name={shakers[i].proName}
-				image={shakers[i].image}
-				price={shakers[i].price}
-				description={shakers[i].description}
-				number={shakers[i].number}
-				popularity={shakers[i].popularity}
+				id={bestShakers[i].id}
+				name={bestShakers[i].proName}
+				image={bestShakers[i].image}
+				price={bestShakers[i].price}
+				description={bestShakers[i].description}
+				number={bestShakers[i].number}
+				popularity={bestShakers[i].popularity}
 			></Product>
 		);
 	}
@@ -27,16 +45,16 @@ function allShakers() {
 
 function allSnacks() {
 	let snacksArray = [];
-	for (let i = 0; i < snacks.length; i++) {
+	for (let i = 0; i < bestSnacks.length; i++) {
 		snacksArray[i] = (
 			<Product
-				id={snacks[i].id}
-				name={snacks[i].proName}
-				image={snacks[i].image}
-				price={snacks[i].price}
-				description={snacks[i].description}
-				number={snacks[i].number}
-				popularity={snacks[i].popularity}
+				id={bestSnacks[i].id}
+				name={bestSnacks[i].proName}
+				image={bestSnacks[i].image}
+				price={bestSnacks[i].price}
+				description={bestSnacks[i].description}
+				number={bestSnacks[i].number}
+				popularity={bestSnacks[i].popularity}
 			></Product>
 		);
 	}
@@ -80,7 +98,7 @@ function productCards() {
 	return cards;
 }
 
-function Products({ isBestSeller, isSnack, isShaker }) {
+function Products({ isBestSeller, isSnack, isShaker, isProtein }) {
 	console.log(isBestSeller);
 	console.log(isSnack);
 	console.log(isShaker);
@@ -90,6 +108,8 @@ function Products({ isBestSeller, isSnack, isShaker }) {
 		return <CardGroup className="homepageProducts">{allSnacks()}</CardGroup>;
 	} else if (isShaker === "true") {
 		return <CardGroup className="homepageProducts">{allShakers()}</CardGroup>;
+	} else if (isProtein === "true") {
+		return <CardGroup className="homepageProducts">{allProtein()}</CardGroup>;
 	} else {
 		return <CardGroup className="homepageProducts">{productCards()}</CardGroup>;
 	}
