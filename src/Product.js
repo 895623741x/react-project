@@ -3,7 +3,7 @@ import { Carousel, Media, Card, CardGroup, Button } from "react-bootstrap";
 import { useStateValue } from "./StateProvider";
 import image1 from "./assets/athle.jpg";
 
-const Product = ({ id, name, image, price, description, number, popularity }) => {
+const Product = ({ id, name, image, price, description, number, popularity, width }) => {
 	const [{ basket }, dispatch] = useStateValue();
 	// const [click, updateClick] = useState(false);
 	// const clicked = click;
@@ -22,17 +22,13 @@ const Product = ({ id, name, image, price, description, number, popularity }) =>
 		});
 	};
 	return (
-		<Card key={id}>
+		<Card key={id} style={{ width: width }}>
 			<Card.Img variant="top" src={image} />
 			<Card.Body>
 				<Card.Title>{name}</Card.Title>
-				<Card.Text>
-					{description}
-					<br />
-					<b>${price}</b>
-				</Card.Text>
+				<Card.Text>{description}</Card.Text>
 			</Card.Body>
-
+			<b>${price}</b>
 			<b>Popularity: {popularity}</b>
 			<Button onClick={addToCart}>ADD TO CART</Button>
 		</Card>

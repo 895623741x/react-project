@@ -3,7 +3,7 @@ import { Carousel, Media, Card, CardGroup, Button } from "react-bootstrap";
 import { useStateValue } from "./StateProvider";
 import "./Products.css";
 import Product from "./Product";
-import { products, bestSellersArray, bestSnacks, bestShakers, bestProtein } from "./data";
+import { products, bestAll, bestSnacks, bestShakers, bestProtein } from "./data";
 
 ////
 
@@ -63,16 +63,16 @@ function allSnacks() {
 
 function bestSellers() {
 	let bestSellers = [];
-	for (let i = 0; i < bestSellersArray.length; i++) {
+	for (let i = 0; i < bestAll.length; i++) {
 		bestSellers[i] = (
 			<Product
-				id={bestSellersArray[i].id}
-				name={bestSellersArray[i].proName}
-				image={bestSellersArray[i].image}
-				price={bestSellersArray[i].price}
-				description={bestSellersArray[i].description}
-				number={bestSellersArray[i].number}
-				popularity={bestSellersArray[i].popularity}
+				id={bestAll[i].id}
+				name={bestAll[i].proName}
+				image={bestAll[i].image}
+				price={bestAll[i].price}
+				description={bestAll[i].description}
+				number={bestAll[i].number}
+				popularity={bestAll[i].popularity}
 			></Product>
 		);
 	}

@@ -5,6 +5,7 @@ import "./Home1.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header1 from "./Header1.js";
 import Products from "./Products";
+import Information from "./Information";
 //^^^^^import area
 
 //Carousel
@@ -30,75 +31,47 @@ function Home1() {
 			<Header1></Header1>
 			<Carousel className="carousel">{slideCards()}</Carousel>
 
-			<h1 className="recommendation1">--- BEST SELLERS ---</h1>
+			<h1 className="bestSellerTitle">--- BEST SELLERS ---</h1>
 			<div className="bestSeller-div">
-				<Products isBestSeller="true" isSnack="false" isShaker="false" isProtein="false"></Products>
-				<Link>
+				<Products isBestSeller="true"></Products>
+				<Link to="/popular">
 					<Button variant="dark" className="viewAllButton">
 						View All
 					</Button>
 				</Link>
 			</div>
 
-			<h1 className="recommendation1">--- Protein ---</h1>
+			<h1 className="bestSellerTitle">--- Protein ---</h1>
 			<div className="bestSeller-div">
-				<Products isBestSeller="false" isSnack="false" isShaker="false" isProtein="true"></Products>
-				<Link>
+				<Products isProtein="true"></Products>
+				<Link to="/protein">
 					<Button variant="dark" className="viewAllButton">
 						View All
 					</Button>
 				</Link>
 			</div>
 
-			<h1 className="recommendation2">Snack</h1>
+			<h1 className="bestSellerTitle">--- Snack ---</h1>
 			<div className="bestSeller-div">
-				<Products isBestSeller="false" isSnack="true" isShaker="false" isProtein="false"></Products>
-				<Link>
+				<Products isSnack="true"></Products>
+				<Link to="/snack">
 					<Button variant="dark" className="viewAllButton">
 						View All
 					</Button>
 				</Link>
 			</div>
 
-			<h1 className="recommendation2">Shaker</h1>
+			<h1 className="bestSellerTitle">--- Shaker ---</h1>
 			<div className="bestSeller-div">
-				<Products isBestSeller="false" isSnack="false" isShaker="true" isProtein="false"></Products>
-				<Link>
+				<Products isShaker="true"></Products>
+				<Link to="/shaker">
 					<Button variant="dark" className="viewAllButton">
 						View All
 					</Button>
 				</Link>
 			</div>
 
-			<div className="information-div">
-				<div className="service-div">
-					<h5 className="item">Service</h5>
-					<Link to="/contact" className="item">
-						Contact Us
-					</Link>
-					<Link to="/delivery" className="item">
-						Delivery Information
-					</Link>
-					<Link to="/return_policy" className="item">
-						Return Policy
-					</Link>
-				</div>
-				<div className="about-div">
-					<h5 className="item">About Us</h5>
-					<Link to="story" className="item">
-						Brand Story
-					</Link>
-					<Link to="partners" className="item">
-						Partners
-					</Link>
-					<Link to="careers" className="item">
-						Careers
-					</Link>
-				</div>
-				<div className="socialMedia-div">
-					<h5 className="item">Follow Us</h5>
-				</div>
-			</div>
+			<Information />
 		</div>
 	);
 }

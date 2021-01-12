@@ -1,14 +1,23 @@
 /* .main-div {
 	display: flex;
 } */
+.title {
+	margin-top: 100px;
+}
 .minor-div {
-	margin-top: 150px;
+	margin-top: 50px;
 	/* display: flex; */
+}
+.productSort-div {
+	margin-left: 170px;
 }
 .price-div {
 	border-style: solid;
 	border-width: 5px;
 	border-color: antiquewhite;
+}
+.display-div {
+	display: flex;
 }
 .products-div {
 	width: 80%;
@@ -17,4 +26,9 @@
 	grid-template-columns: repeat(4, auto);
 	grid-gap: 5px;
 	grid-auto-flow: flex;
+	margin: 5px 10px 10% 10px;
+}
+.optionBox-div {
+	width: 150px;
+	margin-left: 20px;
 }

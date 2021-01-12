@@ -1,11 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link, withRouter } from "react-router-dom";
 import Home1 from "./Home1";
-import Protein from "./ProteinPage/Protein";
+import Protein from "./ProductPage/Protein";
 import Cart from "./Cart/Cart";
-import Snack from "./SnackPage/Snack";
-
-import Shaker from "./ShakerPage/Shaker";
+import Snack from "./ProductPage/Snack";
+import PopularProducts from "./ProductPage/PopularProducts";
+import Shaker from "./ProductPage/Shaker";
 import Login from "./Login";
 
 function App() {
@@ -16,6 +16,7 @@ function App() {
 					<Route exact path="/">
 						<Home1></Home1>
 					</Route>
+					<Route path="/popular" component={PopularProducts}></Route>
 					<Route path="/protein" component={Protein}></Route>
 					<Route path="/cart" component={Cart}></Route>
 					<Route path="/snack" component={Snack}></Route>

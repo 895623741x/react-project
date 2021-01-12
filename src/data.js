@@ -276,16 +276,9 @@ const popularityHighLow = (arr) => {
 	return arr;
 };
 
-//best seller
-
-let bestProducts = products.filter((a) => a.popularity >= 20);
-let bestProductsHighLow = popularityHighLow(bestProducts);
-let emptyArr1 = [];
-for (let i = 0; i < 8; i++) {
-	emptyArr1[i] = bestProductsHighLow[i];
-}
-export const bestSellersArray = emptyArr1;
-
+//All
+let allBest = products;
+export const rankedAllBest = popularityHighLow(allBest);
 // Snacks
 let snacks = products.filter((a) => a.type === "snack");
 export const rankedSnacks = popularityHighLow(snacks);
@@ -296,17 +289,27 @@ export const rankedShakers = popularityHighLow(shakers);
 let protein = products.filter((a) => a.type === "protein");
 export const rankedProtein = popularityHighLow(protein);
 
+// Homepage most popular products
+
+let emptyArr1 = [];
 let emptyArr2 = [];
 let emptyArr3 = [];
 let emptyArr4 = [];
+
+for (let i = 0; i < 8; i++) {
+	emptyArr1[i] = rankedAllBest[i];
+}
+
 for (let i = 0; i < 4; i++) {
 	emptyArr2[i] = rankedSnacks[i];
 	emptyArr3[i] = rankedShakers[i];
 	emptyArr4[i] = rankedProtein[i];
 }
-
+// homepage best products in each category
 export const bestSnacks = emptyArr2;
 
 export const bestShakers = emptyArr3;
 
 export const bestProtein = emptyArr4;
+
+export const bestAll = emptyArr1;
