@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { Carousel, Media, Card, Nav, NavDropdown, Row, Form } from "react-bootstrap";
+import { Carousel, Media, Card, Nav, NavDropdown, Dropdown, Row, Form } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./ProductPage.css";
 import Header1 from "../Header1";
 import Product from "../Product";
 
-function ProductPage(productType, productName) {
-	const initialState = productType.productType;
+function ProductPage({ productType }) {
+	const initialState = productType;
 
 	const [data, updateData] = useState(initialState);
 

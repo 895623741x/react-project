@@ -1,0 +1,33 @@
+.productCard {
+	transform: scale(1, 1);
+	transition: all 0.2s ease-out;
+	padding: 15px;
+}
+.productCard:hover {
+	transform: scale(1.03, 1.03);
+}
+.cardLink {
+	text-decoration: none;
+	color: black;
+}
+.clearIcon {
+	cursor: pointer;
+	margin-left: 95%;
+	transition: all 0.2s ease-in-out;
+}
+.clearIcon:hover {
+	color: red;
+	transform: scale(1.1, 1.1);
+}
+.modal-overview {
+	display: flex;
+}
+.modal-image {
+	width: 400px;
+	height: 360px;
+	padding: 5px;
+}
+.modal-description {
+	display: flex;
+	flex-direction: column;
+}

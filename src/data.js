@@ -276,16 +276,16 @@ const popularityHighLow = (arr) => {
 	return arr;
 };
 
-//All
+// Sorted All
 let allBest = products;
 export const rankedAllBest = popularityHighLow(allBest);
-// Snacks
+// Sorted Snacks
 let snacks = products.filter((a) => a.type === "snack");
 export const rankedSnacks = popularityHighLow(snacks);
-// Shakers
+// Sorted Shakers
 let shakers = products.filter((a) => a.type === "shaker");
 export const rankedShakers = popularityHighLow(shakers);
-// Protein
+// Sorted Protein
 let protein = products.filter((a) => a.type === "protein");
 export const rankedProtein = popularityHighLow(protein);
 

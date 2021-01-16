@@ -43,7 +43,7 @@
 }
 
 .homepageProducts {
-	cursor: pointer;
+	/* cursor: pointer; */
 	display: grid;
 	grid-template-columns: repeat(4, auto);
 	grid-gap: 5px;

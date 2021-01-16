@@ -99,9 +99,6 @@ function productCards() {
 }
 
 function Products({ isBestSeller, isSnack, isShaker, isProtein }) {
-	console.log(isBestSeller);
-	console.log(isSnack);
-	console.log(isShaker);
 	if (isBestSeller === "true") {
 		return <CardGroup className="homepageProducts">{bestSellers()}</CardGroup>;
 	} else if (isSnack === "true") {
