@@ -73,6 +73,7 @@ function bestSellers() {
 				description={bestAll[i].description}
 				number={bestAll[i].number}
 				popularity={bestAll[i].popularity}
+				gallery={bestAll[i].gallery}
 			></Product>
 		);
 	}

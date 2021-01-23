@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { Carousel, Media, Card, CardGroup, Button } from "react-bootstrap";
 import Modal from "react-modal";
-import ProductDetail from "./ProductScreen/ProductDetail";
+
+import Gallery from "react-amazon-gallery";
 import { useStateValue } from "./StateProvider";
 import ClearIcon from "@material-ui/icons/Clear";
 import "./product.css";
 
-function Product({ id, name, image, price, description, number, popularity }) {
+function Product({ id, name, image, price, description, number, popularity, gallery }) {
 	const [{ basket }, dispatch] = useStateValue();
 
 	const isChecked = false;
@@ -58,7 +59,8 @@ function Product({ id, name, image, price, description, number, popularity }) {
 				<ClearIcon className="clearIcon" onClick={() => updateModalOpen(false)} />
 				<h3>{name}</h3>
 				<div className="modal-overview">
-					<img className="modal-image" src={image}></img>
+					{/* <img className="modal-image" src={image}></img> */}
+					<Gallery images={gallery} />
 					<div className="modal-description">
 						<h5>{description}</h5>
 						<b>${price}</b>
