@@ -84,6 +84,7 @@ function ProductPage({ productType, productName }) {
 									id={p.id}
 									name={p.name}
 									image={p.image}
+									gallery={p.gallery}
 									price={p.price}
 									description={p.description}
 									number={p.number}
