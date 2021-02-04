@@ -47,6 +47,7 @@ function Cart() {
 	const [{ basket }] = useStateValue();
 	return (
 		<div>
+			<Header1 />
 			<div className="cart-div">
 				<div className="cart-items">
 					{/* <Header1></Header1> */}

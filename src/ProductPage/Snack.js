@@ -21,7 +21,7 @@ import ProductPage from "./ProductPage";
 const initialState = rankedSnacks;
 
 function Snack() {
-	return <ProductPage productType={rankedSnacks} />;
+	return <ProductPage productType={rankedSnacks} productName="Snacks" />;
 }
 
 export default Snack;

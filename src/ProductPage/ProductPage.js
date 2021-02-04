@@ -5,11 +5,14 @@ import "./ProductPage.css";
 import Header1 from "../Header1";
 import Product from "../Product";
 
-function ProductPage({ productType }) {
+function ProductPage({ productType, productName }) {
 	const initialState = productType;
 
 	const [data, updateData] = useState(initialState);
 
+	const popularityHighLow = (a, b) => {
+		return b.popularity - a.popularity;
+	};
 	const lowHigh = (a, b) => {
 		return a.price - b.price;
 	};
@@ -35,7 +38,7 @@ function ProductPage({ productType }) {
 	return (
 		<div className="main-div">
 			<Header1></Header1>
-			<h1 className="title">good</h1>
+			<h1 className="title">{productName}</h1>
 			<div className="minor-div">
 				<div className="productSort-div">
 					<Nav>
@@ -49,7 +52,10 @@ function ProductPage({ productType }) {
 							<NavDropdown.Item>$10-$50</NavDropdown.Item>
 							<NavDropdown.Item>Above $50</NavDropdown.Item>
 						</NavDropdown> */}
-						<NavDropdown title="Popularity">
+						<NavDropdown title="Sort by">
+							<NavDropdown.Item onClick={() => updateData([...data].sort(popularityHighLow))}>
+								Popularity(Low to high)
+							</NavDropdown.Item>
 							<NavDropdown.Item onClick={() => updateData([...data].sort(lowHigh))}>Price(Low to high)</NavDropdown.Item>
 							<NavDropdown.Item onClick={() => updateData([...data].sort(highLow))}>Price(High to low)</NavDropdown.Item>
 						</NavDropdown>

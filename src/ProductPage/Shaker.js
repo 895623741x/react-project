@@ -20,7 +20,7 @@ import ProductPage from "./ProductPage";
 const initialState = rankedShakers;
 
 function Shaker() {
-	return <ProductPage productType={rankedShakers} />;
+	return <ProductPage productType={rankedShakers} productName="Shakers" />;
 }
 
 export default Shaker;

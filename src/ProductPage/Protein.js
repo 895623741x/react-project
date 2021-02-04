@@ -8,7 +8,7 @@ import ProductPage from "./ProductPage";
 const initialState = rankedProtein;
 
 function Protein() {
-	return <ProductPage productType={rankedProtein} />;
+	return <ProductPage productType={rankedProtein} productName="Protein" />;
 	// const [data, updateData] = useState(initialState);
 
 	// const lowHigh = (a, b) => {

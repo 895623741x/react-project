@@ -71,7 +71,7 @@ function Home1() {
 				</Link>
 			</div>
 
-			<Information />
+			{/* <Information /> */}
 		</div>
 	);
 }
