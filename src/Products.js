@@ -15,6 +15,7 @@ function allProtein() {
 				id={bestProtein[i].id}
 				name={bestProtein[i].proName}
 				image={bestProtein[i].image}
+				gallery={bestProtein[i].gallery}
 				price={bestProtein[i].price}
 				description={bestProtein[i].description}
 				number={bestProtein[i].number}
@@ -33,6 +34,7 @@ function allShakers() {
 				id={bestShakers[i].id}
 				name={bestShakers[i].proName}
 				image={bestShakers[i].image}
+				gallery={bestShakers[i].gallery}
 				price={bestShakers[i].price}
 				description={bestShakers[i].description}
 				number={bestShakers[i].number}
@@ -51,6 +53,7 @@ function allSnacks() {
 				id={bestSnacks[i].id}
 				name={bestSnacks[i].proName}
 				image={bestSnacks[i].image}
+				gallery={bestSnacks[i].gallery}
 				price={bestSnacks[i].price}
 				description={bestSnacks[i].description}
 				number={bestSnacks[i].number}
@@ -69,6 +72,7 @@ function bestSellers() {
 				id={bestAll[i].id}
 				name={bestAll[i].proName}
 				image={bestAll[i].image}
+				gallery={bestAll[i].gallery}
 				price={bestAll[i].price}
 				description={bestAll[i].description}
 				number={bestAll[i].number}
@@ -89,6 +93,7 @@ function productCards() {
 				id={products[i].id}
 				name={products[i].proName}
 				image={products[i].image}
+				gallery={products[i].gallery}
 				price={products[i].price}
 				description={products[i].description}
 				number={products[i].number}

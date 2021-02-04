@@ -6,6 +6,7 @@ import Gallery from "react-amazon-gallery";
 import { useStateValue } from "./StateProvider";
 import ClearIcon from "@material-ui/icons/Clear";
 import "./product.css";
+import { requirePropFactory } from "@material-ui/core";
 
 function Product({ id, name, image, price, description, number, popularity, gallery }) {
 	const [{ basket }, dispatch] = useStateValue();
@@ -60,7 +61,7 @@ function Product({ id, name, image, price, description, number, popularity, gall
 				<h3>{name}</h3>
 				<div className="modal-overview">
 					{/* <img className="modal-image" src={image}></img> */}
-					<Gallery images={gallery} />
+					<Gallery images={gallery.map((a) => require("" + a))} />
 					<div className="modal-description">
 						<h5>{description}</h5>
 						<b>${price}</b>

@@ -30,8 +30,8 @@ function Header1() {
 						</Nav.Link>
 						<Nav.Link className="navItem">
 							<Link to="/login">
-								<AccountCircleIcon fontSize="large" />
-								<span className="accountIcon-span">Account</span>
+								{/* <AccountCircleIcon fontSize="large" />
+								<span className="accountIcon-span">Account</span> */}
 							</Link>
 						</Nav.Link>
 						<Nav.Link className="navItem">
@@ -42,10 +42,10 @@ function Header1() {
 						</Nav.Link>
 
 						<Form inline className="form">
-							<FormControl type="text" placeholder="Search" />
-							<Button variant="outline-info">
+							{/* <FormControl type="text" placeholder="Search" /> */}
+							{/* <Button variant="outline-info">
 								<SearchIcon />
-							</Button>
+							</Button> */}
 						</Form>
 					</div>
 					<div className="nav-div2">
