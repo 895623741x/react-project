@@ -1,4 +1,3 @@
-import image1 from "./assets/goldcasein1.png";
 export const initialState = {
 	basket: [],
 	user: null,
@@ -66,6 +65,18 @@ const Reducer = (state, action) => {
 				newBasket2.splice(index2, 1);
 			}
 			return { ...state, basket: newBasket2 };
+
+		case "SET_USER":
+			return {
+				...state,
+				user: action.user,
+			};
+
+		case "EMPTY_BASKET":
+			return {
+				...state,
+				basket: [],
+			};
 
 		default:
 			return state;

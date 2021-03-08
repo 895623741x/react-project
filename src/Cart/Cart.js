@@ -44,10 +44,11 @@ import "./Cart.css";
 // export default Cart;
 
 function Cart() {
-	const [{ basket }] = useStateValue();
+	const [{ basket, user }] = useStateValue();
 	return (
-		<div>
+		<div className="cart-container">
 			<Header1 />
+			<h3>Hi, {user?.email}</h3>
 			<div className="cart-div">
 				<div className="cart-items">
 					{/* <Header1></Header1> */}

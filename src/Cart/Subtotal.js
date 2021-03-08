@@ -2,9 +2,11 @@ import React from "react";
 import { Button } from "react-bootstrap";
 import { useStateValue } from "../StateProvider";
 import { getBasketSubtotal } from "../Reducer";
+import { useHistory } from "react-router-dom";
 import "./Subtotal.css";
 
 function Subtotal() {
+	const history = useHistory();
 	const [{ basket }] = useStateValue();
 	let subtotal = getBasketSubtotal(basket);
 	return (
@@ -12,7 +14,7 @@ function Subtotal() {
 			<p>
 				${subtotal.toLocaleString(subtotal)}({basket.length} items)
 			</p>
-			<Button>Checkout</Button>
+			<Button onClick={() => history.push("/payment")}>Checkout</Button>
 		</div>
 	);
 }

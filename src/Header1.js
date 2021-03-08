@@ -7,8 +7,18 @@ import SearchIcon from "@material-ui/icons/Search";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import { useStateValue } from "./StateProvider";
+import { auth } from "./firebase";
+import UserPage from "./UserPage";
+
 function Header1() {
-	const [{ basket }] = useStateValue();
+	const [{ user, basket }, dispatch] = useStateValue();
+
+	const handleAuthentication = () => {
+		if (user) {
+			auth.signOut();
+		}
+	};
+
 	return (
 		<div>
 			<Navbar bg="dark" variant="dark" fixed="top" className="navbar">
@@ -28,10 +38,18 @@ function Header1() {
 						<Nav.Link>
 							<Link to="/shaker">SHAKER</Link>
 						</Nav.Link>
-						<Nav.Link className="navItem">
-							<Link to="/login">
-								{/* <AccountCircleIcon fontSize="large" />
-								<span className="accountIcon-span">Account</span> */}
+						<Nav.Link className="navItem" onClick={handleAuthentication}>
+							<Link to={!user && "/login"}>
+								<AccountCircleIcon fontSize="large" />
+								<span className="accountIcon-span">
+									{user ? (
+										<Link to="/userPage">
+											<div>Hi, {user.email}</div>
+										</Link>
+									) : (
+										"Hi, guest"
+									)}
+								</span>
 							</Link>
 						</Nav.Link>
 						<Nav.Link className="navItem">

@@ -1,6 +1,9 @@
+.cart-container > h3 {
+	margin-top: 100px;
+}
 .cart-div {
 	display: flex;
-	margin-top: 100px;
+	margin-top: 20px;
 }
 
 .cart-subtotal {

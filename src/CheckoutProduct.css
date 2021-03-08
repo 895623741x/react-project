@@ -1,5 +1,6 @@
 .checkoutProduct {
 	display: flex;
+	margin-bottom: 20px;
 }
 .checkoutProduct-image {
 	-o-object-fit: contain;
@@ -13,6 +14,7 @@
 }
 
 .checkoutProduct-info-itemAmount {
+	margin-top: 10px;
 	display: flex;
 }
 

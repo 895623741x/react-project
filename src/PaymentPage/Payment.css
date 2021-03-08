@@ -1,0 +1,39 @@
+.payment {
+	background-color: white;
+}
+
+.payment_container {
+	margin-top: 100px;
+}
+
+.payment_container > h1 {
+	text-align: center;
+	padding: 10px;
+	font-weight: 400px;
+	border-bottom: 1px solid lightgrey;
+}
+
+.userInformation {
+	display: flex;
+}
+
+.userInformation,
+.items,
+.paymentMethod {
+	display: flex;
+	padding: 20px;
+	margin: 0 20px;
+	border-bottom: 1px solid lightgrey;
+}
+
+.userInformation > h5,
+.items > h5,
+.paymentMethod > h5 {
+	flex: 0.1;
+}
+
+.address,
+.paymentItems,
+.paymentDetail {
+	flex: 0.9;
+}
