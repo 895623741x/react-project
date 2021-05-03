@@ -10,13 +10,13 @@ function ProductPage({ productType, productName }) {
 
 	const [data, updateData] = useState(initialState);
 
-	const popularityHighLow = (a, b) => {
+	const popularityDescending = (a, b) => {
 		return b.popularity - a.popularity;
 	};
-	const lowHigh = (a, b) => {
+	const ascending = (a, b) => {
 		return a.price - b.price;
 	};
-	const highLow = (a, b) => {
+	const descending = (a, b) => {
 		return b.price - a.price;
 	};
 
@@ -52,12 +52,12 @@ function ProductPage({ productType, productName }) {
 							<NavDropdown.Item>$10-$50</NavDropdown.Item>
 							<NavDropdown.Item>Above $50</NavDropdown.Item>
 						</NavDropdown> */}
-						<NavDropdown title="Sort by">
-							<NavDropdown.Item onClick={() => updateData([...data].sort(popularityHighLow))}>
+						<NavDropdown title="Sorted by">
+							<NavDropdown.Item onClick={() => updateData([...data].sort(popularityDescending))}>
 								Popularity(Low to high)
 							</NavDropdown.Item>
-							<NavDropdown.Item onClick={() => updateData([...data].sort(lowHigh))}>Price(Low to high)</NavDropdown.Item>
-							<NavDropdown.Item onClick={() => updateData([...data].sort(highLow))}>Price(High to low)</NavDropdown.Item>
+							<NavDropdown.Item onClick={() => updateData([...data].sort(ascending))}>Price(Low to high)</NavDropdown.Item>
+							<NavDropdown.Item onClick={() => updateData([...data].sort(descending))}>Price(High to low)</NavDropdown.Item>
 						</NavDropdown>
 					</Nav>
 				</div>
@@ -82,7 +82,7 @@ function ProductPage({ productType, productName }) {
 							data.map((p) => (
 								<Product
 									id={p.id}
-									name={p.name}
+									name={p.proName}
 									image={p.image}
 									gallery={p.gallery}
 									price={p.price}

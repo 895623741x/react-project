@@ -33,6 +33,7 @@ function Product({ id, name, image, price, description, number, popularity, gall
 
 	return (
 		<CardGroup className="cards">
+			{/* // <div className="card"> */}
 			<Card className="productCard" key={id} style={{ width: "16rem" }}>
 				<Card.Img variant="top" src={image} onClick={() => updateModalOpen(true)} />
 				<Card.Body>
@@ -70,6 +71,7 @@ function Product({ id, name, image, price, description, number, popularity, gall
 					</div>
 				</div>
 			</Modal>
+			{/* </div> */}
 		</CardGroup>
 	);
 }

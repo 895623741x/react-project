@@ -5,7 +5,7 @@ const cors = require("cors");
 const stripe = require("stripe")(
 	"sk_test_51IRCF2DWpxS6go0hgacP4BmmHloiPXqIcd5XBwCqEzpiZTKzNhT5HxquaAdlN8zQraYeNzSGUaQBY6p8pYs0Xl8b00DBb4XC9j"
 );
-
+const data = require("./data");
 // 2. App config
 
 const app = express();
@@ -21,7 +21,7 @@ app.get("/", (request, response) => {
 	response.status(200).send("hello world");
 });
 
-//
+// payment/create
 app.post("/payments/create", async (request, response) => {
 	const total = request.query.total;
 	console.log("payment request received boom!!! for this amount >>>", total);
@@ -34,6 +34,11 @@ app.post("/payments/create", async (request, response) => {
 	response.status(201).send({
 		clientSecret: paymentIntent.client_secret,
 	});
+});
+
+// products
+app.get("/products", (request, response) => {
+	response.status(202).send(data);
 });
 
 // 5. Listen Command

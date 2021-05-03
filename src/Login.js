@@ -22,18 +22,19 @@ function Login() {
 	};
 
 	const register = (e) => {
-		e.preventDefault();
-		auth
-			.createUserWithEmailAndPassword(email, password)
-			.then(
-				// it successfully create a new user with email and password
-				(auth) => {
-					if (auth) {
-						history.push("/");
-					}
-				}
-			)
-			.catch((error) => alert(error.message));
+		history.push("/register");
+		// e.preventDefault();
+		// auth
+		// 	.createUserWithEmailAndPassword(email, password)
+		// 	.then(
+		// 		// it successfully create a new user with email and password
+		// 		(auth) => {
+		// 			if (auth) {
+		// 				history.push("/");
+		// 			}
+		// 		}
+		// 	)
+		// 	.catch((error) => alert(error.message));
 	};
 
 	return (

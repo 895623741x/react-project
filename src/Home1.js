@@ -17,7 +17,7 @@ function slideCards() {
 	let slideCards = [];
 	for (x = 0; x < slides.length; x++) {
 		slideCards[x] = (
-			<Carousel.Item interval={200} key={x}>
+			<Carousel.Item interval={1000} key={x}>
 				<img className={`slide${x}`} src={slides[x]} alt="" />
 			</Carousel.Item>
 		);

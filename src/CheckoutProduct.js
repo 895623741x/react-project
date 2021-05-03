@@ -3,7 +3,7 @@ import { Card, Button } from "react-bootstrap";
 import { useStateValue } from "./StateProvider";
 import "./CheckoutProduct.css";
 
-function CheckoutProduct({ id, name, image, price, description, number }) {
+function CheckoutProduct({ id, name, image, price, description, number, hideButton }) {
 	const [{ basket }, dispatch] = useStateValue();
 	const removeFromBasket = () => {
 		dispatch({
@@ -32,12 +32,16 @@ function CheckoutProduct({ id, name, image, price, description, number }) {
 				<h3>{name}</h3>
 				<p>{description}</p>
 				<p>${price}</p>
-				<Button onClick={removeFromBasket}>Remove From The Basket</Button>
-				<div className="checkoutProduct-info-itemAmount">
-					<Button onClick={increaseItemNum}>+</Button>
-					<input className="info-input" value={number}></input>
-					<Button onClick={decreaseItemNum}>-</Button>
-				</div>
+				{!hideButton && (
+					<div>
+						<Button onClick={removeFromBasket}>Remove From The Basket</Button>
+						<div className="checkoutProduct-info-itemAmount">
+							<Button onClick={increaseItemNum}>+</Button>
+							<input className="info-input" value={number}></input>
+							<Button onClick={decreaseItemNum}>-</Button>
+						</div>
+					</div>
+				)}
 			</div>
 		</div>
 	);
